@@ -7,7 +7,7 @@ describe(ChakraCounter, () => {
 
     const countValue = getByTestId("count");
 
-    expect(Number(countValue.textContent)).toEqual(0);
+    expect(countValue.textContent).toEqual("0");
   });
 
   it("counter should increase by 1 if the increment button is clicked", () => {
@@ -16,12 +16,12 @@ describe(ChakraCounter, () => {
     );
 
     const countValue = getByTestId("count");
-    expect(Number(countValue.textContent)).toEqual(0);
+    expect(countValue.textContent).toEqual("0");
 
     const incrementButton = getByRole("button", { name: "Increment" });
 
     fireEvent.click(incrementButton);
-    expect(Number(countValue.textContent)).toEqual(1);
+    expect(countValue.textContent).toEqual("1");
   });
 
   it("counter should decrease by 1 if the decrement button is clicked", () => {
@@ -30,12 +30,12 @@ describe(ChakraCounter, () => {
     );
 
     const countValue = getByTestId("count");
-    expect(Number(countValue.textContent)).toEqual(5);
+    expect(countValue.textContent).toEqual("5");
 
     const decrementButton = getByRole("button", { name: "Decrement" });
 
     fireEvent.click(decrementButton);
-    expect(Number(countValue.textContent)).toEqual(4);
+    expect(countValue.textContent).toEqual("4");
   });
 
   it("counter should go to 0 if the restart button is clicked", () => {
@@ -44,12 +44,12 @@ describe(ChakraCounter, () => {
     );
 
     const countValue = getByTestId("count");
-    expect(Number(countValue.textContent)).toEqual(10);
+    expect(countValue.textContent).toEqual("10");
 
     const restartButton = getByRole("button", { name: "Restart" });
 
     fireEvent.click(restartButton);
-    expect(Number(countValue.textContent)).toEqual(0);
+    expect(countValue.textContent).toEqual("0");
   });
 });
 
